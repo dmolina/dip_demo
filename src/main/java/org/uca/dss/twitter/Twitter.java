@@ -19,12 +19,12 @@ public class Twitter {
 		
 		if (text.length() > 140) {
 			// uses the tinyURL 
-			TinyUrlShortener shortener = new TinyUrlShortener();
+			URLShortener shortener = new TinyUrlShortener();
 			text = shortener.shorten(text);
 		}
 		
 		if (text.length() <= 140) {
-			SmsTweeter tweeter = new SmsTweeter();
+			Tweeter tweeter = new SmsTweeter();
 			tweeter.send(text, user);
 		}
 		else {

@@ -5,7 +5,7 @@ package org.uca.dss.twitter;
  * @author daniel
  *
  */
-public class SmsTweeter {
+public class SmsTweeter implements Tweeter {
 	/**
 	 * send a text by twitter service (TODO)
 	 * @param text to send.

@@ -21,7 +21,7 @@ import org.apache.http.message.BasicNameValuePair;
  * @author daniel
  *
  */
-public class TinyUrlShortener {
+public class TinyUrlShortener implements URLShortener {
 	
 	private List<String> detectURLs(String text) {
 		// separate input by spaces ( URLs don't have spaces )
@@ -40,6 +40,9 @@ public class TinyUrlShortener {
 		return urls;
 	}
 	
+	/* (non-Javadoc)
+	 * @see org.uca.dss.twitter.uRLShortener#shorten(java.lang.String)
+	 */
 	public String shorten(String text) {
 		String newText = text;
 		List<String> urls = detectURLs(text);
