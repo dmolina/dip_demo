@@ -1,5 +1,7 @@
 package org.uca.dss.twitter;
 
+import com.google.inject.Inject;
+
 /**
  * This class allow us to send tweets
  * @author daniel
@@ -9,6 +11,7 @@ public class Twitter {
 	private URLShortener shortener;
 	private Tweeter tweeter;
 	
+	@Inject
 	public Twitter(URLShortener shortener, Tweeter tweeter) {
 		this.shortener = shortener;
 		this.tweeter = tweeter;
