@@ -8,7 +8,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        Twitter tweet = new Twitter();
+        Twitter tweet = new Twitter(new TinyUrlShortener(), new SmsTweeter());
         String user = "dss_uca";
         String url = "http://esingenieria.uca.es/centro/datos-del-centro/profesorado/";
         tweet.sendText("Creo que no lo entiendo", user);

@@ -6,6 +6,13 @@ package org.uca.dss.twitter;
  *
  */
 public class Twitter {
+	private URLShortener shortener;
+	private Tweeter tweeter;
+	
+	public Twitter(URLShortener shortener, Tweeter tweeter) {
+		this.shortener = shortener;
+		this.tweeter = tweeter;
+	}
 	/**
 	 * Send a new tweet.
 	 * 
@@ -18,13 +25,10 @@ public class Twitter {
 	public void sendText(String text, String user) {
 		
 		if (text.length() > 140) {
-			// uses the tinyURL 
-			URLShortener shortener = new TinyUrlShortener();
 			text = shortener.shorten(text);
 		}
 		
 		if (text.length() <= 140) {
-			Tweeter tweeter = new SmsTweeter();
 			tweeter.send(text, user);
 		}
 		else {
